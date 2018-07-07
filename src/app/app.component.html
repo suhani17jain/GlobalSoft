@@ -1,0 +1,42 @@
+
+<div class="container" >
+  <h3>Please enter the User and their project</h3>
+<div class="row">
+    <div class="col-md-6">
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter User" [(ngModel)]="username" name="username" >    
+            </div>    
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter project name" [(ngModel)]="projecName" name="projectName">    
+            </div>
+            <div class="form-group">
+              <input type="button" class="btn btn-primary" value="check issues" (click)="search()">
+              
+              <input type="button" class="btn btn-primary margin-left" value="Show issues distribution" (click)="showPie()">
+            </div>
+            
+        </form>    
+    </div>    
+</div>
+
+
+<div *ngIf="project_issue">
+    <h3>Number of open issues in this project: {{project_issue.open_issues}} and number of closed issues: {{closed_issue.total_count}}</h3>
+     <!-- <h1>Number of issues in this project: {{project_issue}}</h1> -->
+</div>
+</div>
+
+<div style="width: 950px">
+
+  <div>
+    <h2 style="background-color: rgba(255, rgba(255, 145, 186, 1)); font-size: 2rem">
+    </h2>
+    <canvas id="pieChart" width="650" height="273" class="chartjs-render-monitor"
+      style="display:block; width: 750px; height: 290px;">
+    </canvas>
+
+  </div>
+
+
+</div> 
